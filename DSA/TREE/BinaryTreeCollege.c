@@ -6,7 +6,6 @@ typedef struct treetype
     struct treetype *left;
     int data;
     struct treetype * right;
-    
 }tree;
 
 tree * memory()
@@ -15,7 +14,6 @@ tree * memory()
     p->left=NULL;
     p->right=NULL;
     return p;
-
 }
 tree * create(tree * root,int num)
 {
@@ -26,7 +24,6 @@ tree * create(tree * root,int num)
         p->data=num;
         root =p;
         return (root);
-        
     }
     else if(root->data>num)
     {
@@ -66,7 +63,7 @@ void in_order(tree * root)
 }
 void post_order(tree * root)
 {
-    if (root!=0)
+    if (root!=NULL)
     {
         post_order(root->left);
         post_order(root->right);
@@ -75,7 +72,7 @@ void post_order(tree * root)
 }
 void count(tree * root,int *p)
 {
-    if (root!=0)
+    if (root!=NULL)
     {
         (*p)++;
         count(root->left,p);
@@ -85,7 +82,7 @@ void count(tree * root,int *p)
 }
 void count_leaf(tree * root,int * p)
 {
-    if (root!=0)
+    if (root!=NULL)
     {
         if (root->left==NULL && root->right==NULL)
         (*p)++;
@@ -230,3 +227,4 @@ void main()
 
         }
     } while (num!=12);
+}
