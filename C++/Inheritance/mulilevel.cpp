@@ -3,7 +3,7 @@ using namespace std;
 class studentdetails
 {
     public:
-    char name[20];
+    char name[40];
     int rollno;
     int id;
     int semester;
@@ -18,6 +18,7 @@ class studentdetails
         cin>>id;
         cout<<"Enter Semester: ";
         cin>>semester;
+
     }
 };
 class studentmarks:public studentdetails
@@ -27,10 +28,7 @@ class studentmarks:public studentdetails
     int h;
     int m;
     int s;
-    int ep;
-    int hp;
-    int mp;
-    int sp;
+    
         void get_marks()
     {
         cout<<"\n********Student Marks********\n";
@@ -43,7 +41,7 @@ class studentmarks:public studentdetails
         cout<<"Enter Science marks: ";
         cin>>s;
     }
-    void get_practicalmarks()
+    void get_percentage()
     {
         cout<<"\n********Student Practical Marks********\n";
         cout<<"\nEnter English marks: ";
@@ -64,17 +62,25 @@ class studentfinalresult:public studentmarks
     public:
     void get_finalresult()
     {
-        f=e+h+m+s;
-        cout<<"\n********Student Final Marks********\n";
+        cout<<"\n********Student Final Marks********\n"<<f=e+h+m+s;
         cout<<"Total marks of student are: ";
         cin>>f;
+        cout<<"\nTotal percentage of students are: ";
     }
 };
 int main()
 {
     studentfinalresult b1;
     b1.get_details();
-    b1.get_practicalmarks();
+    b1.get_percentage();
     b1.get_finalresult();
+   Student per[100];
+   int n, i;
+   cout<<"\nPlease enter the number of Employees (Max. 100): ";
+   cin>>n;
+   for(i=0; i< n; i++)
+    {
+      per[i].get_percentage();
+   }
     return 0;
 }

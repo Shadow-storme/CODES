@@ -8,7 +8,7 @@ class complex
     void accept()
     {
         cout<<"\nEnter two complex numbers: ";
-        cout<<"\nA :  ";
+        cout<<"\nA : ";
         cin>>num1;
         cout<<"B : ";
         cin>>num2;
@@ -24,6 +24,22 @@ class complex
     {
         cout<<num1<<"+"<<num2<<"i"<<"\n";
     }
+    #include<iosttream>
+    using namespace std;
+    class complex
+    {
+        int num1,num2;
+        public:
+        void accept()
+        {
+            cout<<"Enter the two complex numbers: ";
+            cout<<"\nA: ";
+            cin>>num1;
+            cout<<"B: ";
+            cin>>num2;
+        }
+    }
+
 };
 int main()
 {

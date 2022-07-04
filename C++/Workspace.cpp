@@ -1,9 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class incredecre
+class complex
 {
-    int a,b;
-    public:
     
 }
