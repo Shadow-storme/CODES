@@ -1,46 +1,79 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-class Shape
-{
-	public:
-		virtual void area() = 0;
+class shape
+    {
+    public:
+        virtual void calculate()
+        {
+        }
+    };
+
+class rectangle:public shape
+    {
+    public:
+        void calculate()
+        {
+            float area,l,b;
+            cout<<"For finding the area of rectangle : "<<endl;
+            cout<<"Enter length "<<endl;
+            cin>>l;
+            cout<<"Enter breadth "<<endl;
+            cin>>b;
+            area=l*b;
+            cout<<"Area of Rectangle is : "<<area<<"\n\n";
+        }
 };
-class Rectangle : public Shape
-{
-	private:
-		int l;
-		int b;
-	public:
-		Rectangle(int x, int y)
-		{
-			l = x;
-			b = y;
-		}
-		void area()
-		{
-			cout<<"Area of rectangle is: "<<(l*b)<<endl;
-		}
+
+class square:public shape
+    {
+    public:
+        void calculate()
+        {
+            float area,a;
+            cout<<"For finding the area of square : "<<endl;
+            cout<<"Enter side"<<endl;
+            cin>>a;
+            area=a*a;
+            cout<<"Area of Square is : "<<area<<"\n\n";
+        }
 };
-class Circle : public Shape
-{
-	private:
-		int r;
-	public:
-		Circle(int x)
-		{
-			r = x;
-		}
-		void area()
-		{
-			cout<<"Area of circle is: "<<(3.142*r*r)<<endl;
-		}
+
+class circle:public shape
+    {
+    public:
+        void calculate()
+        {
+            float area,r;
+            cout<<"For finding the area of circle : "<<endl;
+            cout<<"Enter radius "<<endl;
+            cin>>r;
+            area=2*3.14*r*r;
+            cout<<"Area of Rectangle is : "<<area<<"\n\n";
+        }
 };
+
 int main()
-{
-	Shape *s;
-	s = new Rectangle(10, 20);
-	s->area();
-	s = new Circle(2);
-	s->area();
-	return 0;
+{   shape s;
+    shape *obj1;
+    obj1=&s;
+    obj1->calculate();
+
+    rectangle r;
+    rectangle *obj2;
+    obj2=&r;
+    obj2->calculate();
+
+    square sq;
+    square *obj3;
+    obj3=&sq;
+    obj3->calculate();
+
+    circle c;
+    circle *obj4;
+    obj4=&c;
+    obj4->calculate();
+
+
+
+    return 0;
 }

@@ -1,31 +1,29 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 class A
 {
 public:
-  int add(int x, int y, int z)
-  {
-    return (x + y + z);
-  }
+    void add(int a,int b,int c)
+    {
+        cout<<"sum is : "<<a+b+c<<endl;
+    }
 };
-class B : public A
+class B:public A
 {
 public:
-  int add(int x, int y, int z)
-  {
-    cout << "The first number: " << x << endl;
-    cout << "The second number:" << y << endl;
-    cout << "The third number:" << z << endl;
-    return (x + y + z);
-  }
+    void add(int a,int b,int c)
+    {
+        cout<<"sum is : "<<a+b+c<<endl;
+    }
 };
+
 int main()
 {
-  B obj;
-  int q, w, r;
-  cout << "Enter 3 numbers for showing function overriding: ";
-  cin >> q >> w >> r;
+    A obj1;
+    B obj2;
 
-  cout << "SUM is: " << obj.add(q, w, r) << endl;
-  return (0);
+    obj1.add(1,1,1);
+    obj2.add(2,2,2);
+
+    return 0;
 }
