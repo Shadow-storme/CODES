@@ -1,3 +1,4 @@
+@@ -1,19 +0,0 @@
 #include <iostream>
 using namespace std;
 class Parent

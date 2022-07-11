@@ -1,3 +1,4 @@
+@@ -1,50 +0,0 @@
 #include<iostream>
 using namespace std;
 

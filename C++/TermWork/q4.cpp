@@ -1,3 +1,4 @@
+@@ -1,10 +0,0 @@
 #include<iostream>
 using namespace std;
 int num=100;
