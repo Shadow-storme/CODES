@@ -1,5 +1,3 @@
-@@ -1,36 +0,0 @@
-// C++ program to show binary operator overloading 
 #include <iostream>
 using namespace std;
 class Distance 

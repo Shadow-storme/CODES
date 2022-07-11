@@ -1,4 +1,3 @@
-@@ -1,79 +0,0 @@
 #include<iostream>
 using namespace std;
 class shape
