@@ -1,46 +1,56 @@
 #include<iostream>
 using namespace std;
-class staff
-{
-    protected:
-    char name[20];
-    char address[30];
-    char code[20];
 
-};
-class typest:public staff
+class A
 {
     public:
-    int hsp;
-    int esp;
-    void put_details()
+    int math,sci,art,sst,it;
+    void get()
     {
-        cout<<"\n********Typest details********\n";
-        cout<<"\nEnter Name: "<<endl;
-        cin>>name;
-        cout<<"Enter address: "<<endl;
-        cin>>address;
-        cout<<"Enter code: "<<endl;
-        cin>>code;
-        cout<<"Enter Hindispeed: "<<endl;
-        cin>>hsp;
-        cout<<"Enter Englishspeed: "<<endl;
-        cin>>esp;
-    }
-    void get_details()
-    {
-        cout<<"\n***********Single Inheritance**********\n";
-        cout<<"\nName: "<<name<<endl;
-        cout<<"Address: "<<address<<endl;
-        cout<<"Code: "<<code<<endl;
-        cout<<"Hindispeed: "<<hsp<<endl;
-        cout<<"Englishspeed: "<<esp<<endl;
+        cout<<"ENTER THE MARKS IN MATH:";
+            cin>>math;
+        cout<<"\nENTER THE MARKS IN SCI:";
+            cin>>sci;
+        cout<<"\nENTER THE MARKS IN ART:";
+            cin>>art;
+        cout<<"\nENTER THE MARKS IN SST:";
+            cin>>sst;
+        cout<<"\nENTER THE MARKS IN IT: ";
+            cin>>it;
     }
 };
+
+class B:public A
+{
+public:
+    total()
+    {
+        cout<<"TOTAL MARKS:"<<math+sci+art+sst+it<<endl;
+    }
+};
+
+class C:public B
+{
+  public:
+      per()
+      {
+          cout<<"PERCENTAGE:"<<(math+sci+art+sst+it)/250.0*100<<"%";
+      }
+};
+
+
+
 int main()
 {
-    typest obj;
-    obj.put_details();
-    obj.get_details();
+    printf("\n\n\tMARKS=?/50\n\n");
+
+    C obj;
+    for(int i=0;i<10;i++)
+    {
+    cout<<"\n\nFOR "<<i+1<<" STUDENT\n\n";
+    obj.get();
+    obj.total();
+    obj.per();
+    }
     return 0;
 }

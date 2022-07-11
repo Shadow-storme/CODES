@@ -1,80 +1,46 @@
 #include<iostream>
 using namespace std;
-class studentdetails
-{
-    public:
-    char name[20];
-    int rollno;
-    int id;
-    int semester;
-    void get_details()
-    {
-        cout<<"\n********Student details********\n";
-        cout<<"\nEnter student name: ";
-        cin>>name;
-        cout<<"Enter Student Roll no.: ";
-        cin>>rollno;
-        cout<<"Enter Student ID: ";
-        cin>>id;
-        cout<<"Enter Semester: ";
-        cin>>semester;
-    }
-};
-class studentmarks:public studentdetails
-{
-    public:
-    int e;
-    int h;
-    int m;
-    int s;
-    int ep;
-    int hp;
-    int mp;
-    int sp;
-        void get_marks()
-    {
-        cout<<"\n********Student Marks********\n";
-        cout<<"\nEnter English marks: ";
-        cin>>e;
-        cout<<"Enter Hindi marks: ";
-        cin>>h;
-        cout<<"Enter Maths marks: ";
-        cin>>m;
-        cout<<"Enter Science marks: ";
-        cin>>s;
-    }
-    void get_practicalmarks()
-    {
-        cout<<"\n********Student Practical Marks********\n";
-        cout<<"\nEnter English marks: ";
-        cin>>ep;
-        cout<<"Enter Hindi marks: ";
-        cin>>hp;
-        cout<<"Enter Maths marks: ";
-        cin>>mp;
-        cout<<"Enter Science marks: ";
-        cin>>sp;
-    }
-
-};
-class studentfinalresult:public studentmarks
+class staff
 {
     protected:
-    int f;
+    char name[20];
+    char address[30];
+    char code[20];
+
+};
+class typest:public staff
+{
     public:
-    void get_finalresult()
+    int hsp;
+    int esp;
+    void put_details()
     {
-        f=e+h+m+s;
-        cout<<"\n********Student Final Marks********\n";
-        cout<<"Total marks of student are: ";
-        cin>>f;
+        cout<<"\n********Typest details********\n";
+        cout<<"\nEnter Name: "<<endl;
+        cin>>name;
+        cout<<"Enter address: "<<endl;
+        cin>>address;
+        cout<<"Enter code: "<<endl;
+        cin>>code;
+        cout<<"Enter Hindispeed: "<<endl;
+        cin>>hsp;
+        cout<<"Enter Englishspeed: "<<endl;
+        cin>>esp;
+    }
+    void get_details()
+    {
+        cout<<"\n***********Single Inheritance**********\n";
+        cout<<"\nName: "<<name<<endl;
+        cout<<"Address: "<<address<<endl;
+        cout<<"Code: "<<code<<endl;
+        cout<<"Hindispeed: "<<hsp<<endl;
+        cout<<"Englishspeed: "<<esp<<endl;
     }
 };
 int main()
 {
-    studentfinalresult b1;
-    b1.get_details();
-    b1.get_practicalmarks();
-    b1.get_finalresult();
+    typest obj;
+    obj.put_details();
+    obj.get_details();
     return 0;
 }
