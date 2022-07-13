@@ -1,32 +1,39 @@
-#include<stdio.h>                            
-void shiftIntegers(int arr[], int n)         
-{                                           
-    int j = 0,temp;
-    for (int i = 0; i < n; i++)
+#include <stdio.h>
+#define max 100
+
+void sort(int[], int);
+
+void main()
+{
+    int N, A[max];
+    printf("Enter range:");
+    scanf("%d", &N);
+    printf("Enter elements:\n");
+    for (int i = 0; i < N; i++)
     {
-        if (arr[i] < 0)
-        {
-            if (i != j)
-                {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            j++;
-        }
+        scanf("%d", &A[i]);
+    }
+    sort(A, N);
+    printf("After Sorting:\n");
+    for (int i = 0; i < N; i++)
+    {
+        printf("%d\t", A[i]);
     }
 }
-void printArray(int arr[], int n)
-    {
-        for (int i = 0; i < n; i++)
-        printf(" %d ", arr[i]);
-    }
 
-int main()
-{  
-    int arr[] = { 2,4,-10,13,-7,-60,52,8,-19 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    shiftIntegers(arr, n);
-    printArray(arr, n);
-    return 0;
+void sort(int A[], int N)
+{
+    int temp;
+    for (int i = 0; i < N - 1; i++)
+    {
+        for (int j = 0; j < (N - 1) - i; j++)
+        {
+            if (A[j] >= 0 && A[j + 1] < 0)
+            {
+                temp = A[j];
+                A[j] = A[j + 1];
+                A[j + 1] = temp;
+            }
+        }
+    }
 }

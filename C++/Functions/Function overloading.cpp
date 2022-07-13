@@ -1,30 +1,26 @@
 #include<iostream>
 using namespace std;
 
-class level
+class Shape
 {
     public:
-
-    //fucntion call with 1 int parameter
-    void func(int x)
+    void Volume(int h,double r)
     {
-        cout<<"Value of x is: "<<x;
+        cout<<"Value of Cylinder is: "<<3.14*r*r*h;
     }
-    //fucntion call with same name with 1 double parameter
-    void func(double x)
+    void Volume(int r)
     {
-        cout<<"\nThe value of x is: "<<x;
+        cout<<"\nThe value of Cube is: "<<r*r*r;
     }
-    //function with same name but 2 int parameters
-    void func(int x,int y)
+    void Volume(int l,int b,int h)
     {
-        cout<<"\nvalue of x and y is: "<<x<<","<<y;
+        cout<<"\nvalue of x and y is: "<<l*b*h;
     }
-};
+}
 int main()
 {
-    level obj1;
-    obj1.func(4);
-    obj1.func(89.89);
-    obj1.func(45,67);
+    Shape obj1;
+    obj1.Volume(4,6);
+    obj1.Volume(8);
+    obj1.Volume(4,6,8);
 }

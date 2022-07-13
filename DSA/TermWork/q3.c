@@ -1,131 +1,88 @@
-//Write a C program to create two link lists positive and negative from a Original linked list, so that positive linked list contains all positive elements and negative linked list contains negative elements. Positive and negative linked lists should use the node of existing original linked list without using global variable.*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-
-#include<stdio.h>
-#include<stdlib.h>
-
-struct node
+typedef struct list
 {
-    int data;
-    struct node *next;
-};
+    char Emp_Id;
+    char Emp_Name[20];
+    struct list *next;
+} nodetype;
 
-struct node *create_list(struct node *head)
+nodetype *insert(nodetype *L)
 {
-    struct node *temp;
-    int data;
-    printf("Enter the data : ");
-    scanf("%d",&data);
-    while(data != -1)
+    nodetype *p = NULL;
+    char X, Y[30];
+    p = (nodetype *)malloc(sizeof(nodetype));
+    if (p != NULL)
     {
-        temp = (struct node *)malloc(sizeof(struct node));
-        temp->data = data;
-        temp->next = NULL;
-        if(head == NULL)
-        {
-            head = temp;
-        }
-        else
-        {
-            struct node *p;
-            p = head;
-            while(p->next != NULL)
-            {
-                p = p->next;
-            }
-            p->next = temp;
-        }
-        printf("Enter the data : ");
-        scanf("%d",&data);
+        printf("Enter employee Id: ");
+        scanf(" %c", &X);
+        printf("Enter emplyee name: ");
+        scanf("%s", &Y);
+        p->Emp_Id = X;
+        strcpy(p->Emp_Name, Y);
+        p->next = L;
+        L = p;
     }
-    return head;
+    return L;
 }
 
-void print_list(struct node *head)
+int isPresent(nodetype *L1, nodetype *L2)
 {
-    struct node *p;
-    p = head;
-    while(p != NULL)
+    while (L1 != NULL)
     {
-        printf("%d ",p->data);
-        p = p->next;
+        if (L1->Emp_Id == L2->Emp_Id)
+            return 0;
+        L1 = L1->next;
     }
-    printf("\n");
+    return 1;
 }
 
-struct node *create_list_positive(struct node *head)
+void unionNodes(nodetype *L1, nodetype *L2)
 {
-    struct node *temp;
-    struct node *p;
-    p = head;
-    while(p != NULL)
+    nodetype *t = L1;
+    while (t != NULL)
     {
-        if(p->data > 0)
+        printf("Employee Id: %c\n", t->Emp_Id);
+        printf("Employee Name: %s\n\n", t->Emp_Name);
+        t = t->next;
+    }
+    while (L2 != NULL)
+    {
+        if (isPresent(L1, L2))
         {
-            temp = (struct node *)malloc(sizeof(struct node));
-            temp->data = p->data;
-            temp->next = NULL;
-            if(head == NULL)
-            {
-                head = temp;
-            }
+            printf("Employee Id: %c\n", L2->Emp_Id);
+            printf("Employee Name: %s\n\n", L2->Emp_Name);
+        }
+        L2 = L2->next;
+    }
+}
+
+void main()
+{
+    nodetype *L1 = NULL, *L2 = NULL;
+    int ch;
+    do
+    {
+        printf("\nEnter 1 to insert in first list\nEnter 2 to insert in second list\nEnter 3 to display union\nEnter 4 for exit\n");
+        scanf("%d", &ch);
+        switch (ch)
+        {
+        case 1:
+            L1 = insert(L1);
+            break;
+
+        case 2:
+            L2 = insert(L2);
+            break;
+
+        case 3:
+            if (L1 == NULL || L2 == NULL)
+                printf("One list is empty!!");
             else
-            {
-                struct node *q;
-                q = head;
-                while(q->next != NULL)
-                {
-                    q = q->next;
-                }
-                q->next = temp;
-            }
+                unionNodes(L1, L2);
+            break;
         }
-        p = p->next;
-    }
-    return head;
-}
-
-struct node *create_list_negative(struct node *head)
-{
-    struct node *temp;
-    struct node *p;
-    p = head;
-    while(p != NULL)
-    {
-        if(p->data < 0)
-        {
-            temp = (struct node *)malloc(sizeof(struct node));
-            temp->data = p->data;
-            temp->next = NULL;
-            if(head == NULL)
-            {
-                head = temp;
-            }
-            else
-            {
-                struct node *q;
-                q = head;
-                while(q->next != NULL)
-                {
-                    q = q->next;
-                }
-                q->next = temp;
-            }
-        }
-        p = p->next;
-    }
-    return head;
-}
-
-int main()
-{
-    struct node *head;
-    head = NULL;
-    head = create_list(head);
-    print_list(head);
-    head = create_list_positive(head);
-    print_list(head);
-    head = create_list_negative(head);
-    print_list(head);
-    return 0;
+    } while (ch <= 3);
 }

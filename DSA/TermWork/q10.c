@@ -1,29 +1,41 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int main()
-{   char input[100];
-  printf("Enter the string : ");
-  fgets(input, 100, stdin);
-  void ascendingOrderString()
+void quickSort(char A[], int LB, int UB)
 {
-  int i, j;
-  char temp;
-  int stringLength = strlen(input);
-  for (i = 0; i < stringLength - 1; i++)
-   {
-    for (j = i + 1; j < stringLength; j++)
-     {
-      if (input[i] > input[j])
-       {
-        temp = input[i];
-        input[i] = input[j];
-        input[j] = temp;
-       }
-     }
-   }
+    int i = LB, j = UB;
+    char key = A[LB], t;
+    if (LB >= UB)
+        return;
+    while (i < j)
+    {
+        while (key >= A[i] && i < j)
+            i++;
+        while (key < A[j])
+            j--;
+        if (i < j)
+        {
+            t = A[i];
+            A[i] = A[j];
+            A[j] = t;
+        }
+    }
+    A[LB] = A[j];
+    A[j] = key;
+    quickSort(A, LB, j - 1);
+    quickSort(A, j + 1, UB);
 }
-  ascendingOrderString();
-  puts(input);
-  return 0;
+
+void main()
+{
+    char A[] = {'c', 'r', 'e', 'a', 'y', 'b', '\0'};
+    int N = 6;
+    printf("Before Sorting\n");
+    for (int i = 0; i < N; i++)
+        printf("%c\t", A[i]);
+    printf("\n");
+    printf("After Sorting\n");
+    quickSort(A, 0, N - 1);
+    for (int i = 0; i < N; i++)
+        printf("%c\t", A[i]);
 }

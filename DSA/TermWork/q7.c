@@ -1,85 +1,82 @@
-//Write a C program to insert a node in a circular doubly link list from left to right so that nodes of that circular doubly link list will be in ascending order of data without using global variable.*/
+#include <stdio.h>
+#include <stdlib.h>
 
-
-#include<stdio.h>
-#include<stdlib.h>
-
-struct node
+typedef struct list
 {
-    int data;
-    struct node *next;
-    struct node *prev;
-};
+    struct list *prev;
+    int info;
+    struct list *next;
+} nodetype;
 
-struct node *create_list(struct node *head)
+void insert(nodetype **L, nodetype **R)
 {
-    struct node *temp;
-    int data;
-    printf("Enter the data : ");
-    scanf("%d",&data);
-    while(data != -1)
+    int X;
+    nodetype *p = NULL, *t = NULL;
+    p = (nodetype *)malloc(sizeof(nodetype));
+    if (p != NULL)
     {
-        temp = (struct node *)malloc(sizeof(struct node));
-        temp->data = data;
-        temp->next = NULL;
-        temp->prev = NULL;
-        if(head == NULL)
+        printf("Enter number:");
+        scanf("%d", &X);
+        p->info = X;
+        if ((*L) == NULL && (*R) == NULL)
+            (*L) = (*R) = p;
+        else if (X < (*L)->info)
         {
-            head = temp;
+            p->next = (*L);
+            (*L)->prev = p;
+            (*L) = p;
+        }
+        else if (X > (*R)->info)
+        {
+            p->prev = (*R);
+            (*R)->next = p;
+            (*R) = p;
         }
         else
         {
-            struct node *p;
-            p = head;
-            while(p->next != NULL)
-            {
-                p = p->next;
-            }
-            p->next = temp;
-            temp->prev = p;
+            t = (*L);
+            while (X > t->next->info)
+                t = t->next;
+            p->next = t->next;
+            p->prev = t;
+            t->next->prev = p;
+            t->next = p;
         }
-        printf("Enter the data : ");
-        scanf("%d",&data);
+        (*L)->prev = (*R);
+        (*R)->next = (*L);
     }
-    return head;
 }
 
-struct node *create_list_positive(struct node *head)
+void display(nodetype *L)
 {
-    struct node *temp;
-    struct node *p;
-    p = head;
-    while(p != NULL)
+    nodetype *t = L;
+    do
     {
-        if(p->data < 0)
+        printf("%d\t", t->info);
+        t = t->next;
+    } while (t != L);
+}
+
+void main()
+{
+    int ch;
+    nodetype *L = NULL, *R = NULL;
+    do
+    {
+        printf("\nEnter 1 to insert\nEnter 2 to display\nEnter 3 for exit\n");
+        scanf("%d", &ch);
+        switch (ch)
         {
-            temp = p->next;
-            p->next = p->prev;
-            p->prev = temp;
+        case 1:
+            insert(&L, &R);
+            break;
+
+        case 2:
+            if (L == NULL)
+                printf("Empty");
+            else
+                display(L);
+            break;
         }
-        p = p->next;
-    }
-    return head;
-}   
-
-void print_list(struct node *head)
-{
-    struct node *p;
-    p = head;
-    while(p != NULL)
-    {
-        printf("%d ",p->data);
-        p = p->next;
-    }
-    printf("\n");
-}
-
-int main()
-{
-    struct node *head;
-    head = NULL;
-    head = create_list(head);
-    head = create_list_positive(head);
-    print_list(head);
-    return 0;
+    } while (ch <= 2);
 }

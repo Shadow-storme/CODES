@@ -24,22 +24,6 @@ class complex
     {
         cout<<num1<<"+"<<num2<<"i"<<"\n";
     }
-    #include<iosttream>
-    using namespace std;
-    class complex
-    {
-        int num1,num2;
-        public:
-        void accept()
-        {
-            cout<<"Enter the two complex numbers: ";
-            cout<<"\nA: ";
-            cin>>num1;
-            cout<<"B: ";
-            cin>>num2;
-        }
-    }
-
 };
 int main()
 {
@@ -59,4 +43,25 @@ int main()
     cout<<"\t";
     sum.display();
     return 0;   
+}
+#include<iostream>
+using namespace std;
+
+class complex
+{
+    int num1,num2;
+    public:
+    void accept()
+    {
+        cout<<"Enter two complex numbers: ";
+        cout<<"A: ";
+        cin>>num1;
+        cout<<"B: ";
+        cin>>num2;
+    }
+    complex operator+(complex obj)
+    complex c;
+    c.num1=num1+obj.num1;
+    c.num2=num2+obj.num2;
+    return(c);
 }

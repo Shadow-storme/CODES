@@ -1,106 +1,92 @@
-//Write a C program to   create a linked list P, then write a ‘C’ function named split to create two   linked lists Q & R from P So that Q contains all elements in odd positions of P and R contains the remaining elements. Finally print both linked lists i.e., Q and R.*/
+#include <stdio.h>
+#include <stdlib.h>
 
-
-#include<stdio.h>
-#include<stdlib.h>
-
-struct node
+typedef struct list
 {
-    int data;
-    struct node *next;
-};
+    int info;
+    struct list *next;
+} nodetype;
 
-struct node *create_list(struct node *head)
+nodetype *insert(nodetype *P)
 {
-    struct node *temp;
-    int data;
-    printf("Enter the data : ");
-    scanf("%d",&data);
-    while(data != -1)
+    nodetype *t = NULL;
+    int X;
+    t = (nodetype *)malloc(sizeof(nodetype));
+    if (t != NULL)
     {
-        temp = (struct node *)malloc(sizeof(struct node));
-        temp->data = data;
-        temp->next = NULL;
-        if(head == NULL)
-        {
-            head = temp;
-        }
-        else
-        {
-            struct node *p;
-            p = head;
-            while(p->next != NULL)
-            {
-                p = p->next;
-            }
-            p->next = temp;
-        }
-        printf("Enter the data : ");
-        scanf("%d",&data);
+        printf("Enter Number: ");
+        scanf("%d", &X);
+        t->info = X;
+        t->next = P;
+        P = t;
     }
-    return head;
+    return P;
 }
 
-void print_list(struct node *head)
+void split(nodetype *P, nodetype **Q, nodetype **R)
 {
-    struct node *p;
-    p = head;
-    while(p != NULL)
+    while (P != NULL)
     {
-        printf("%d ",p->data);
-        p = p->next;
+        nodetype *t = (nodetype *)malloc(sizeof(nodetype));
+        t->info = P->info;
+        if (t->info % 2 != 0)
+        {
+            t->next = (*Q);
+            (*Q) = t;
+        }
+        else if (t->info % 2 == 0)
+        {
+            t->next = (*R);
+            (*R) = t;
+        }
+        P = P->next;
     }
-    printf("\n");
+    printf("split the list into odd and even linked list\n");
 }
 
-struct node *create_list_positive(struct node *head)
+void display(nodetype *Q, nodetype *R)
 {
-    struct node *temp;
-    struct node *p;
-    p = head;
-    while(p != NULL)
+    printf("ODD Linked list:\n");
+    while (Q != NULL)
     {
-        if(p->data % 2 == 0)
+        printf("%d\t", Q->info);
+        Q = Q->next;
+    }
+    printf("\nEven Linked list:\n");
+    while (R != NULL)
+    {
+        printf("%d\t", R->info);
+        R = R->next;
+    }
+}
+
+void main()
+{
+    nodetype *P = NULL, *Q = NULL, *R = NULL;
+    int ch;
+    do
+    {
+        printf("\nEnter 1 to insert\nEnter 2 to split\nEnter 3 for display\nEnter 4 for exit\n");
+        scanf("%d", &ch);
+        switch (ch)
         {
-            p = p->next;
-        }
-        else
-        {
-            temp = (struct node *)malloc(sizeof(struct node));
-            temp->data = p->data;
-            temp->next = NULL;
-            if(head == NULL)
-            {
-                head = temp;
-            }
+        case 1:
+            P = insert(P);
+            break;
+
+        case 2:
+            if (P == NULL)
+                printf("empty");
             else
-            {
-                struct node *q;
-                q = head;
-                while(q->next != NULL)
-                {
-                    q = q->next;
-                }
-                q->next = temp;
-            }
-            p = p->next;
+                split(P, &Q, &R);
+            break;
+
+        case 3:
+            if (Q == NULL && R == NULL)
+                printf("empty");
+            else
+                display(Q, R);
+            break;
         }
-    }
-    return head;
+    } while (ch <= 3);
 }
-
-
-int main()
-{
-    struct node *head;
-    head = NULL;
-    head = create_list(head);
-    head = create_list_positive(head);
-    print_list(head);
-    return 0;
-}
-
-
-
-
-
