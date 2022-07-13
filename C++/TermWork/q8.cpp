@@ -48,7 +48,7 @@ class circle:public shape
             cout<<"Enter radius "<<endl;
             cin>>r;
             area=2*3.14*r*r;
-            cout<<"Area of Rectangle is : "<<area<<"\n\n";
+            cout<<"Area of Circle is : "<<area<<"\n\n";
         }
 };
 

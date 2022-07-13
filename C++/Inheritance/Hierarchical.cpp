@@ -1,14 +1,14 @@
 #include <iostream>  
-using namespace std;  
+using namespace std;
 class calculator                 // Declaration of base class.  
 {  
-    public:  
-    int a;  
-    int b;  
+    public:
+    int a;
+    int b;
     void get_data(int n,int m)  
     {  
-        a= n;  
-        b = m;  
+        a= n;
+        b = m;
     }  
 };  
 class Addition : public calculator  // inheriting calculator class  
@@ -16,23 +16,23 @@ class Addition : public calculator  // inheriting calculator class
     public:  
     int addition()  
     {  
-        int result = a+b;  
-        return result;  
+        int result = a+b;
+        return result;
     }  
 };  
 class Substraction : public calculator    // inheriting Shape class  
 {  
     public:
     int substraction()  
-    {  
-        float result = a-b;  
-        return result;  
-    }  
-};  
-int main()  
-{  
-    addition a;  
-    substraction s;  
+    {
+        float result = a-b;
+        return result;
+    }
+};
+int main()
+{
+    addition a;
+    substraction s;
     int a,b;
     std::cout<< "Enter the value of a and b for addition: " << std::endl;  
     cin>>a>>b;  
