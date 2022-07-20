@@ -1,3 +1,4 @@
+//Program in C++ to print the area and parameter for the following shapes using multiple inheritance.
 #include<iostream>
 #include<conio.h>
 using namespace std;

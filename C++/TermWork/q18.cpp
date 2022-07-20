@@ -1,29 +1,22 @@
-#include<iostream>
+//Program to find cube of one number (int type, float type) using Function Template.
+#include <iostream>
 using namespace std;
 
-int add(int x,int y)
+template <class T>
+T cube(T a)
 {
-return(x+y);
+    return a * a * a;
 }
-float add(float x,float y)
-{
-return(x+y);
-}
-double add(double x,double y)
-{
-return(x+y);
-}
-template<typename T>
-T add(T x, T y)
-    {
-         return(x+y);
-    }
 
 int main()
 {
-    cout<<"Addition of 2 integers 3 and 4 is :"<<add<int>(3,4)<<endl;
-    cout<<"Addition of 2 float variables 3.4 and 4.2 is :"<<add<float>(3.4,4.2)<<endl;
-    cout<<"Addition of 2 double variables 9345.4554 and 5564.8724 is :"<<add<double>(9345.4554,5564.8724)<<endl;
+    int a;
+    float b;
+    cout << "Enter a number: ";
+    cin >> a;
+    cout << "Cube of " << a << " is " << cube(a) << endl;
+    cout << "Enter a number: ";
+    cin >> b;
+    cout << "Cube of " << b << " is " << cube(b) << endl;
     return 0;
-
 }

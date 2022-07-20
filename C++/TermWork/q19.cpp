@@ -1,3 +1,4 @@
+//Program for exception handling using try and catch.
 #include<iostream>
 using namespace std;
 

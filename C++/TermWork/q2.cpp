@@ -1,3 +1,4 @@
+//Program in C++ to access static variables using the scope resolution operator.
 #include <iostream>
 using namespace std;
 class Parent

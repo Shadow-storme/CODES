@@ -1,3 +1,4 @@
+//Program to find the total marks and percentage for 5 subjects of 10 students using multilevel inheritance. 
 #include<iostream>
 using namespace std;
 

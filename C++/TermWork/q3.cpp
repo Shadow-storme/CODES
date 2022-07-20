@@ -1,3 +1,4 @@
+//Program in C++ to print the sum and cube of numbers using inline function.
 #include<iostream>
 using namespace std;
 class calc

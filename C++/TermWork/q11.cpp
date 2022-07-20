@@ -1,3 +1,4 @@
+//Program in C++ to put the typist details using single inheritance.
 #include<iostream>
 using namespace std;
 class staff

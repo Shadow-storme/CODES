@@ -1,3 +1,4 @@
+//Program in C++ to access global variables using the scope resolution operator
 #include<iostream>
 using namespace std;
 int num=100;

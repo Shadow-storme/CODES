@@ -1,4 +1,5 @@
- #include<iostream>
+//Program in C++ to print student details using the concept of class and object.
+#include<iostream>
 using namespace std;
 class student  
 {

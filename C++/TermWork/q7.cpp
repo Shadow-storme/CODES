@@ -1,16 +1,21 @@
+//Program in C++ to add two-time values using the parameterized constructor.
 #include<iostream>
 using namespace std;
 class Time  {
     int hrs,min,sec;
 public:
-    Time()        {
+    Time()
+    {
         hrs=0;
         min=0;
-        sec=0;     }
-    Time(int a,int b,int c)   {
+        sec=0;    
+    }
+    Time(int a,int b,int c)   
+    {
         hrs=a;
         min=b;
-        sec=c;         }
+        sec=c;         
+    }
     void addTime(Time tt1,Time tt2)   {
         sec=tt1.sec+tt2.sec;
         min=sec/60;  //1

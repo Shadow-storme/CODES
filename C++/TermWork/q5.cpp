@@ -1,3 +1,4 @@
+//Program in C++ to calculate the net salary of an employee using array of object
 #include<iostream>
 using namespace std;
 class Employee

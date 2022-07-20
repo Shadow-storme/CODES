@@ -1,3 +1,4 @@
+//Program in C++ to calculate the area of different shapes (square, rectangle, circle) using a virtual function.
 #include<iostream>
 using namespace std;
 class shape

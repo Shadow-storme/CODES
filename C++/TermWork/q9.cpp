@@ -1,3 +1,4 @@
+//Program in C++ to add three numbers using the concept of function overriding.
 #include<iostream>
 using namespace std;
 class A

@@ -1,3 +1,4 @@
+//Program in C++ to check if the number is prime or not with the help of parameterized constructor.
 #include<iostream>
 using namespace std;
 class prime

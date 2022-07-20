@@ -1,35 +1,51 @@
-#include <iostream>
+//Program to overload binary operator + and to add two complex numbers using the friend function.
+#include<iostream>
 using namespace std;
-class Distance 
-{
-public:
-	int feet, inch;
-	Distance()
-	{
-		this->feet = 0;
-		this->inch = 0;
-	}
-	Distance(int f, int i)
-	{
-		this->feet = f;
-		this->inch = i;
-	}
-    friend Distance operator+(Distance&, Distance&);
-};
 
-Distance operator+(Distance& d1, Distance& d2)
+class Complex
 {
-	Distance d3;
-	d3.feet = d1.feet + d2.feet;
-	d3.inch = d1.inch + d2.inch;
-	return d3;
+    int num1, num2;
+    public:
+        void accept()
+    {
+        cout<<"\nEnter two complex numbers: ";
+        cout<<"\nA :  ";
+        cin>>num1;
+        cout<<"B : ";
+        cin>>num2;
+    }
+
+    friend Complex operator+(Complex c1, Complex c2);
+
+    void display()
+        {
+            cout<<num1<<"+"<<num2<<"i"<<"\n";
+        }
+};
+Complex operator+(Complex c1, Complex c2)
+{
+        Complex c;
+        c.num1=c1.num1+c2.num1;
+        c.num2=c1.num2+c2.num2;
+        return(c);
 }
 int main()
 {
-	Distance d1(8, 9);
-	Distance d2(10, 2);
-	Distance d3;
-	d3 = d1 + d2;
-	cout << "\nTotal Feet & Inches: " << d3.feet << "'" << d3.inch;
-	return 0;
+      Complex c1,c2, sum;
+
+        c1.accept();
+        c2.accept();
+
+        sum = c1+c2;
+
+        cout<<"\n Entered Values : \n";
+        cout<<"\t";
+        c1.display();
+        cout<<"\t";
+        c2.display();
+
+        cout<<"\n Addition of Real and Imaginary Numbers : \n";
+        cout<<"\t";
+        sum.display();
+        return 0;
 }
