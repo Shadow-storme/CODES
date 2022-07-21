@@ -39,8 +39,6 @@ class C:public B
       }
 };
 
-
-
 int main()
 {
     printf("\n\n\tMARKS=?/50\n\n");
