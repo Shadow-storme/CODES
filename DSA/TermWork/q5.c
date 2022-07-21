@@ -1,3 +1,4 @@
+//Program to create two link lists positive and negative from a Original linked list, so that positive linked list contains all positive elements and negative linked list contains negative elements.
 #include <stdio.h>
 #include <stdlib.h>
 

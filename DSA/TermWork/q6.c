@@ -1,3 +1,4 @@
+//Program to   create a linked list P, then write a ‘C’ function named split to create two  linked lists Q & R from P So that Q contains all elements in odd positions of P and R contains the remaining elements.
 #include <stdio.h>
 #include <stdlib.h>
 

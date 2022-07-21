@@ -1,3 +1,4 @@
+//Program to add of two polynomials of degree n, using linked list
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>

@@ -1,3 +1,4 @@
+//Program to store N elements to an array and then send all positive elements of the array to the end without altering the original sequence.
 #include <stdio.h>
 #define max 100
 

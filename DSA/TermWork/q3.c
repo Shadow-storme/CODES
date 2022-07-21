@@ -1,3 +1,4 @@
+//Program to find union (of two linked lists) based on their information field that implements singly linked list.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

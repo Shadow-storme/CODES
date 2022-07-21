@@ -1,3 +1,4 @@
+//Program to sort a sequence of characters given by user in an array, using Quick sort technique.
 #include <stdio.h>
 #include <stdlib.h>
 

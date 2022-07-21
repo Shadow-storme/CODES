@@ -1,49 +1,63 @@
 #include<stdio.h>
-#include<stdlib.h>
+#define max 50
 
-void quicksort(int number[25],int first,int last)
+
+void swap(int *a,int *b)
 {
-    int i,j,pivot,temp;
-    if(first<last)
-    {
-    pivot=first;
-        i=first;
-        j=last;
-
-        while(i<j)
-        {
-            while(number[i]<=number[pivot]&&i<last)
-            i++;
-            if(i<j)
-            {
-                temp=number[i];
-                number[i]=number[j];
-                number[j]=temp;
-            }
-        }
-        temp=number[pivot];
-        number[pivot]=number[j];
-        number[j]=temp;
-        quicksort(number,first,j-1);
-        quicksort(number,j+1,last);
-    }
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
 }
 
-int main()
+//************************
+int partition(int arr[],int lb,int ub)
 {
-    int i,count,number[25];
-       printf("How many elements are u going to enter?: ");
-   scanf("%d",&count);
+    int pivot=arr[lb];
+    int start=lb,end=ub;
 
-   printf("Enter %d elements: ", count);
-   for(i=0;i<count;i++)
-      scanf("%d",&number[i]);
+    while(start<end)
+    {
+        while(arr[start]<=pivot)
+            start++;
 
-   quicksort(number,0,count-1);
+        while (arr[end]>pivot)
+            end--;
 
-   printf("Order of Sorted elements: ");
-   for(i=0;i<count;i++)
-      printf(" %d",number[i]);
+        if(start<end)
+            swap(&arr[end],&arr[start]);
+    }
+    swap(&arr[lb],&arr[end]);
+    return end;
+}
 
-   return 0;
+//**********************
+
+void quick_sort(int arr[],int lb,int ub)
+{
+    int loc;
+    if(lb<ub)
+    {
+        loc=partition(arr,lb,ub);
+        quick_sort(arr,loc+1,ub);
+        quick_sort(arr,lb,loc-1);
+    }
+}
+//***********************
+void main()
+{
+   int arr[max],ub,lb=0;
+    printf("\n\nENTER THE LIMIT OF THE ARRAY:");
+    scanf("%d",&ub);
+
+    printf("\nNOW ENTER THE %d ELEMENTS IN THE ARRAY:\n",ub);
+
+    for(int i=0;i<ub;i++)
+        scanf("%d",&arr[i]);
+
+    quick_sort(arr,lb,ub-1);
+
+    printf("\n\nTHE SOERTED ARRAY:\n");
+     for(int i=0;i<ub;i++)
+        printf("%d ",arr[i]);
 }
