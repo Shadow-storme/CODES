@@ -6,6 +6,7 @@ typedef struct treetype
     struct treetype *left;
     int data;
     struct treetype * right;
+    
 }tree;
 
 tree * memory()
@@ -14,6 +15,7 @@ tree * memory()
     p->left=NULL;
     p->right=NULL;
     return p;
+
 }
 tree * create(tree * root,int num)
 {
@@ -24,6 +26,7 @@ tree * create(tree * root,int num)
         p->data=num;
         root =p;
         return (root);
+        
     }
     else if(root->data>num)
     {
@@ -63,7 +66,7 @@ void in_order(tree * root)
 }
 void post_order(tree * root)
 {
-    if (root!=NULL)
+    if (root!=0)
     {
         post_order(root->left);
         post_order(root->right);
@@ -72,7 +75,7 @@ void post_order(tree * root)
 }
 void count(tree * root,int *p)
 {
-    if (root!=NULL)
+    if (root!=0)
     {
         (*p)++;
         count(root->left,p);
@@ -82,12 +85,12 @@ void count(tree * root,int *p)
 }
 void count_leaf(tree * root,int * p)
 {
-    if (root!=NULL)
+    if (root!=0)
     {
         if (root->left==NULL && root->right==NULL)
         (*p)++;
-        count(root->left,p);
-        count(root->right,p);
+        count_leaf(root->left,p);
+        count_leaf(root->right,p);
         
     }
 }
@@ -125,16 +128,26 @@ void left_node(tree *root,int *x)
         
     }
 }
+void right_node(tree *root,int *z)
+{
+    if (root!=0)
+    {
+        (*z)++;
+        count(root->left,z);
+        count(root->right,z);
+        
+    }
+}
 void main()
 {
     tree * root=NULL;
     int max=0,min=0;
     int num,c=0,c1=0;
-    int x=0;
+    int x=0,z=0;
 
     do
     {
-        printf("\n\n1.Create\n2.Preorder\n3.Inorder\n4.Postorder\n5.Count\n6.Count Leaf\n7.Maximum\n8.Minimum\n9.Nodes with left child only\n10.Nodes with Right child only\n10.Nodes in the right side of root \n11.Nodes in the left side of root\n12.Exit ");
+        printf("\n\n1.Create\n2.Preorder\n3.Inorder\n4.Postorder\n5.Count\n6.Count Leaf\n7.Maximum\n8.Minimum\n9.Nodes in the right side of root \n10.Nodes in the left side of root\n11.Nodes with left child only\n12.Nodes with Right child only\n13.Exit ");
         scanf(" %d",&num);
 
         switch (num)
@@ -187,7 +200,7 @@ void main()
                 break;
             }
             case 5:
-            {
+            {c=0;
                 if (root == NULL)
                 {
                     printf("empty");
@@ -222,9 +235,14 @@ void main()
                 break;
             case 9:
                 left_node(root->left,&x);
-                printf("%d ",x);
+                printf("no. of nodes in right: %d ",x);
+                break;
+            case 10:
+                right_node(root->right,&z);
+                printf("no. of nodes in left: %d ",z);
                 break;
 
         }
-    } while (num!=12);
+    } while (num!=13);
+    
 }

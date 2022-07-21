@@ -19,7 +19,7 @@ void merge(int arr[],int lb,int mid,int ub)
    int i=lb;
     int j=mid+1;
     int k=lb;
-
+    
     while(i<=mid&&j<=ub)
     {
         if(arr[i]<=arr[j])

@@ -10,21 +10,16 @@ void swap(int *x,int *y)
 
 void bubble(int A[],int n)     //array and size.
 {
-    int i,j,flag=0;          //flag is initialize for adaptive
+    int i,j;         //flag is initialize for adaptive
     for(i=0;i<n;i++)
     {
         for(j=0;j<n-i-1;j++)
         {
-            flag=0;
             if(A[j]>A[j+1])
             {
                 flag=1;
                 swap(&A[j],&A[j+1]);     //Main swapping of bubble.
             }
-        }
-        if(flag==0)
-        {
-            break;
         }
     }
 }

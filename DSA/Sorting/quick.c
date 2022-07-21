@@ -30,7 +30,7 @@ int partition(int arr[],int lb,int ub)
     swap(&arr[lb],&arr[end]);
     return end;
 }
-
+    
 //**********************
 
 void quick_sort(int arr[],int lb,int ub)
