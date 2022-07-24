@@ -31,7 +31,7 @@ int partition(int arr[],int lb,int ub)
     return end;
 }
     
-//**********************
+//**********************soritng starts
 
 void quick_sort(int arr[],int lb,int ub)
 {
@@ -43,7 +43,7 @@ void quick_sort(int arr[],int lb,int ub)
         quick_sort(arr,lb,loc-1);
     }
 }
-//***********************
+//***********************ends
 void main()
 {
    int arr[max],ub,lb=0;
