@@ -1,39 +1,44 @@
 #include<iostream>
 using namespace std;
-
-class base {
-public:
-	void fun_1() { cout << "base-1\n"; }
-	virtual void fun_2() { cout << "base-2\n"; }
-	virtual void fun_3() { cout << "base-3\n"; }
-	virtual void fun_4() { cout << "base-4\n"; }
+//Declaration of base class:
+class shape
+{
+	public:
+    virtual void calculate()
+    {
+        cout<<"Area of shape: ";
+    }
+    virtual ~shape()
+    {
+        cout<<"Destructor called: ";
+    }
 };
+//Declaration of derived class:
 
-class derived : public base {
-public:
-	void fun_1() { cout << "derived-1\n"; }
-	void fun_2() { cout << "derived-2\n"; }
-	void fun_4(int x) { cout << "derived-4\n"; }
+class rectangle:public shape
+{
+    public:
+    int l,b,area;
+    void calculate()
+    {
+        cout<<"Length of rectangle: ";
+        cin>>l;
+        cout<<"breadth of rectangle: ";
+        cin>>b;
+        area=l*b;
+        cout<<"Area of reactangle: "<<area<<"\n";
+    }
+	virtual ~rectangle()
+    {
+        cout<<"Destructor called: ";
+    }
 };
 
 int main()
 {
-	base *p;
-	derived obj1;
-	p = &obj1;
-
-	// Early binding because fun1() is non-virtual
-	// in base
-	p->fun_1();
-
-	// Late binding (RTP)
-	p->fun_2();
-
-	// Late binding (RTP)
-	p->fun_3();
-
-	// Late binding (RTP)
-	p->fun_4();
-	
+    shape *s;
+    rectangle r;
+    s=&r;
+    s->calculate();
 	return 0;
 }
