@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Hello",
+            "request": "launch",
+            "mainClass": "Hello",
+            "projectName": "CODES_9e4ca45e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "JAVA.Main",
+            "projectName": "CODES_9e4ca45e"
+        },
+        {
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
