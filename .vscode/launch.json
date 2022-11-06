@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Conditionals",
+            "request": "launch",
+            "mainClass": "Conditionals",
+            "projectName": "CODES_1bf0274c"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

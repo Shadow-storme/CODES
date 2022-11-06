@@ -71,3 +71,11 @@ class A
         System.out.println();//new line  
     }
 }*/
+
+//method overriding
+class A
+{
+    public static void main(String[] args) {
+        
+    }
+}
