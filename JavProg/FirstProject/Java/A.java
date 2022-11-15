@@ -1,34 +1,33 @@
 public class A{
     public static void main(String[] args) {
-        int a[]=new int[5];
-        int n;int count=0;
-        Scanner r=new Scanner(System.in);
-        
-            for(int i=0;i<=a.length;i++)
-            {
-                a[i]=r.nextInt();   //Integer value input
-            }
-            //Array elements print
-            System.out.println("Array elemnts: ");
-            for(int i=0;i<a.length;i++)
-            {
-                //Output Statement
-                System.out.println(a[i]+"");
-            }
-            //item searching
-            System.out.println("Enter search elemnts: ");
-            //input:
-            n=r.nextInt();
-            for(int i=0;i<=a.length;i++)
-            {
-                if(a[i]==n)
-                {
-                    count++;
+        String str = "successes";
+        System.out.println("The given string is: " + str);
+
+        int countFirstFreq = 0;
+        int countSecondFreq = 0;
+        char mostFrequent = '\"';
+        char secondMostFrequent = '\"';
+
+
+        for (int j = 0; j < str.length(); j++) {
+            int count = 0;
+            /* To make sure that we do not recount the same letter twice */
+            if (mostFrequent != str.charAt(j)){
+                for (int i = j; i < str.length(); i++) {
+                    if (str.charAt(j) == str.charAt(i))
+                        count++;
                 }
-                if(count>0)
-                System.out.println("Item Found");
-                else
-                System.out.println("Iteem not found");
             }
-    }
+            /* To find the most frequent character */
+            if (count > countFirstFreq) {
+                mostFrequent = str.charAt(j);
+                countFirstFreq = count;
+            }
+            /* To find the second most frequent character */
+            else if (count > countSecondFreq ) {
+                secondMostFrequent = str.charAt(j);
+                countSecondFreq = count;
+            }
+        }
+        System.out.println("The second most frequent char in the string is: " + secondMostFrequent);    }
 }
