@@ -72,10 +72,11 @@ class A
     }
 }*/
 
-//method overriding
+import java.util.Scanner;
 class A
 {
     public static void main(String[] args) {
+        Scanner scr=new Scanner(System.in);
         
     }
 }

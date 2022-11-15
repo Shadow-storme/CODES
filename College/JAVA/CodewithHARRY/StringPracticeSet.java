@@ -25,3 +25,11 @@
     }
 }
  */
+//Write a java program to count the number of words in a string
+/*public class StringPracticeSet {
+    public static void main(String[] args) {
+        String myString="This string conatins  double and tripple spaces";
+        String[] words=myString.split(" ");
+        System.out.println(words.length);
+    }
+}*/
