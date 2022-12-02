@@ -1,8 +1,10 @@
 package Strings;
 //Write a Java program to remove all adjacent duplicates recursively from a given string.
 
+import java.util.Scanner;
+
 public class RemoveduplicateString {
-    public static void check(String[] args) {
+   /*  public static void check(String[] args) {
         if(str.length()<=1)
          {
              System.out.println(str);
@@ -42,3 +44,56 @@ public static void main (String[] args)
     check(ab);
     }
     }
+
+public class RemoveduplicateString{
+    public static void main(String[] args) {
+        String str="aabcddcb";        
+        System.out.println("The given string is:"+str);
+        int l=str.length();
+
+        for(int i=0;i<l;i++)
+        {
+            (str.charAt(i))++;
+        }
+
+        int max=-1;
+        char c=" ";
+
+        for(int i=0;i<l;i++)
+        {
+            if(max < ctr(str.charAt(i)))
+            {
+                max=ctr(str.charAt(i));
+                c=str.charAt(i);
+            }
+        }
+        return c;
+    }
+}
+*/
+public static void main(String[] args) {
+    
+    Scanner scr=new Scanner(System.in);
+    System.out.println("Input data is:");
+    String str=scr.nextLine();
+    String dupchar=" ";
+    System.out.println("Input data is:"+str);
+
+    for(int i=0;i<str.length();i++)
+    {
+        for(int j=i+1;j<str.length();j++)
+        {
+            if(str.charAt(i)==str.charAt(j))
+            {
+                String s=Character.toString(str.charAt(i));
+                if(!dupchar.contains(s))
+                {
+                    dupchar=dupchar+str.charAt(i);
+                }
+                break;
+            }
+        }
+    }
+    System.out.println("Duplicate character is"+dupchar);
+}
+}
