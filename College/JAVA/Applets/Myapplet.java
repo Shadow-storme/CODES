@@ -3,9 +3,10 @@ import java.awt.Graphics;
 
 public class Myapplet extends Applet {
    public void paint (Graphics g) {
-      g.drawString ("Hello World", 25, 50);
+      g.drawString ("Hello World", 250, 500);
    }
 }
-/*<applet code="Myapplet.class" height=3400 width=200>
-</applet>
+/*
+<APPLET CODE="Myapplet.class" WIDTH=500 HEIGHT=500>
+</APPLET>
 */
