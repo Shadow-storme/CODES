@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch One",
+            "request": "launch",
+            "mainClass": "College.JAVA.LeetCode.One",
+            "projectName": "CODES_1bf0274c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Dynamic",
+            "request": "launch",
+            "mainClass": "Dynamic",
+            "projectName": "CODES_1bf0274c"
+        },
+        {
+            "type": "java",
             "name": "Launch EvenOdd",
             "request": "launch",
             "mainClass": "Programs.EvenOdd",
