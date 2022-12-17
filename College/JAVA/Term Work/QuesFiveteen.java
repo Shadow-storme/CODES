@@ -1,0 +1,1 @@
+//15.	WAP to communicate between two machine using Servlet to receive factorial from server.
