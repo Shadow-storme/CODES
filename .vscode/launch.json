@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch hello",
+            "request": "launch",
+            "mainClass": "College.JAVA.hello",
+            "projectName": "CODES_1bf0274c"
+        },
+        {
+            "type": "java",
+            "name": "Launch BubbleSortString",
+            "request": "launch",
+            "mainClass": "BubbleSortString",
+            "projectName": "CODES_1bf0274c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Static",
+            "request": "launch",
+            "mainClass": "Static",
+            "projectName": "CODES_1bf0274c"
+        },
+        {
+            "type": "java",
             "name": "Launch QuesSix",
             "request": "launch",
             "mainClass": "QuesSix",
