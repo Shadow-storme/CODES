@@ -21,8 +21,9 @@ public class QuesNine {
         return;
       }
     }
-
-    // If no match is found, throw a NoMatchException
+  
+    
+    // Throw an exception if no match is found
     throw new NoMatchException("No match found.");
   }
 }
@@ -33,4 +34,3 @@ class NoMatchException extends Exception {
     super(message);
   }
 }
-
