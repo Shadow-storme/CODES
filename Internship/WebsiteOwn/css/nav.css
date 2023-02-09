@@ -9,7 +9,7 @@
     position: sticky;
     top: 0;
     left: 0%;
-    height: 70px;
+    height: 60px;
     width: 100%;
     background-color: #2a2929;
     z-index: 9;
@@ -31,9 +31,9 @@
 }
 
 .search{
-    width: 700px;
+    width: 900px;
     display: flex;
-    
+    margin-right: 70px;
 }
 
 .search-box{
@@ -61,4 +61,80 @@
     font-size: 20px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.search-box::placeholder{
+    color: #a9a9a9;
+}
+
+.fa-solid{
+    font-size: 30px;
+    color: #9E9E00;
+    margin-right: 0px;
+    padding-left: 10px;
+}
+
+.login-btn{
+    width: 60px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #9E9E00;
+    color: #000000 ;
+    text-transform: capitalize;
+    font-size: 17px;
+    border-radius: 10px;
+}
+.links-container{
+    width: 100%;
+    display: flex;
+    padding: 10px 10vw;
+    justify-content: center;
+    list-style: none;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    background-color: #ffffff;
+}
+
+.link{
+    text-transform: capitalize;
+    padding: 0 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #383838;
+    opacity: 0.5;
+    transition: .5s;
+    
+}
+
+nav ul ul{
+    position:absolute;
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid #a4a4a4;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: #454545
+
+}
+
+nav ul li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+    transition: .3s linear;
+    
+}
+
+nav ul ul li{
+    width: 120px;
+    height: 35px;
+    display: block;
+    position: relative;
+    border-top: none;
+    padding: 10px 10px;
 }
