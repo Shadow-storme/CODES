@@ -1,4 +1,4 @@
-/*#include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
@@ -48,8 +48,8 @@ void display()
         printf("%d",p->data);
     }
     printf("\n");
-}*/
-#include <math.h>
+}dddddddddddddddddddddddddd 
+/*#include <math.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -154,4 +154,4 @@ int main() {
     usleep(8000 * 2);
   }
   return 0;
-}
+}*/

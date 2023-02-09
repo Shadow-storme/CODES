@@ -1,105 +1,121 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch hello",
+      "request": "launch",
+      "mainClass": "College.JAVA.hello",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch BubbleSortString",
+      "request": "launch",
+      "mainClass": "BubbleSortString",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Static",
+      "request": "launch",
+      "mainClass": "Static",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch QuesSix",
+      "request": "launch",
+      "mainClass": "QuesSix",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch One",
+      "request": "launch",
+      "mainClass": "College.JAVA.LeetCode.One",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Dynamic",
+      "request": "launch",
+      "mainClass": "Dynamic",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch EvenOdd",
+      "request": "launch",
+      "mainClass": "Programs.EvenOdd",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Demo",
+      "request": "launch",
+      "mainClass": "Demo",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Demo",
+      "request": "launch",
+      "mainClass": "College.JAVA.Exam.Demo",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Conditionals",
+      "request": "launch",
+      "mainClass": "Conditionals",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch narrow",
+      "request": "launch",
+      "mainClass": "narrow",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch testA",
+      "request": "launch",
+      "mainClass": "testA",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "type": "java",
+      "name": "Launch wide",
+      "request": "launch",
+      "mainClass": "wide",
+      "projectName": "CODES_1bf0274c"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/Dropbox/Study/GitHub/CODES/C language/Basic programs",
+      "program": "d:/Dropbox/Study/GitHub/CODES/C language/Basic programs/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
         {
-            "type": "java",
-            "name": "Launch hello",
-            "request": "launch",
-            "mainClass": "College.JAVA.hello",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch BubbleSortString",
-            "request": "launch",
-            "mainClass": "BubbleSortString",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch Static",
-            "request": "launch",
-            "mainClass": "Static",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch QuesSix",
-            "request": "launch",
-            "mainClass": "QuesSix",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch One",
-            "request": "launch",
-            "mainClass": "College.JAVA.LeetCode.One",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch Dynamic",
-            "request": "launch",
-            "mainClass": "Dynamic",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch EvenOdd",
-            "request": "launch",
-            "mainClass": "Programs.EvenOdd",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch Demo",
-            "request": "launch",
-            "mainClass": "Demo",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch Demo",
-            "request": "launch",
-            "mainClass": "College.JAVA.Exam.Demo",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch Conditionals",
-            "request": "launch",
-            "mainClass": "Conditionals",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Launch narrow",
-            "request": "launch",
-            "mainClass": "narrow",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch testA",
-            "request": "launch",
-            "mainClass": "testA",
-            "projectName": "CODES_1bf0274c"
-        },
-        {
-            "type": "java",
-            "name": "Launch wide",
-            "request": "launch",
-            "mainClass": "wide",
-            "projectName": "CODES_1bf0274c"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ]
+    }
+  ]
 }
