@@ -31,9 +31,9 @@
 }
 
 .search{
-    width: 900px;
+    width: 1000px;
     display: flex;
-    margin-right: 70px;
+    margin-left: 95px;
 }
 
 .search-box{

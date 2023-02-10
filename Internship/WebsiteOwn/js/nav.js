@@ -10,9 +10,8 @@ const createNav = () => {
             <input type="text" class="search-box" placeholder="Product name, Category name, etc.">
             <button class="search-btn"><b>Search</b></button>
         </div>
-
-        <button class="login-btn"><b>Login</b></button>
-        <i class="fa-solid fa-cart-shopping"></i>
+        <button onclick="window.location.href='login.html'"class="login-btn"><b>Login</b></button>
+        <i class="fa-solid fa-cart-shopping"<button onclick="window.location.href='cart.html'"class="fa-solid fa-cart-shopping"></button></i>
     </div>
 </div>
 <ul class="links-container">
