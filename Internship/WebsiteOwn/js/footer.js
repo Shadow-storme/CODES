@@ -23,7 +23,7 @@ const createFooter = () => {
             <li class="category-title">Links</li>
             <li><a href="#" class="footer-link">Home</a></li>
             <li><a href="login.html" class="footer-link">Login</a></li>
-            <li><a href="#" class="footer-link">Contact</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
     </div>
 </div>

@@ -32,7 +32,7 @@ const createNav = () => {
         </a>
     </li>
     <li><a href="#" class="link">Kids</a></li>
-    <li><a href="Contact.html" class="link">Contact</a></li>
+    <li><a href="contact.html" class="link">Contact</a></li>
 </ul>
     `;
 }
