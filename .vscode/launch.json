@@ -105,8 +105,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Dropbox/Study/GitHub/CODES/C language/Basic programs",
-      "program": "d:/Dropbox/Study/GitHub/CODES/C language/Basic programs/build/Debug/outDebug",
+      "cwd": "d:/Dropbox/Study/GitHub/CODES/Internship/JavaScript/Assignment",
+      "program": "d:/Dropbox/Study/GitHub/CODES/Internship/JavaScript/Assignment/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
