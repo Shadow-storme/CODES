@@ -36,5 +36,17 @@
   ],
   "python.analysis.typeCheckingMode": "basic",
   "C_Cpp.errorSquiggles": "disabled",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "python.testing.pytestArgs": [
+    "College"
+  ],
+  "python.testing.unittestEnabled": true,
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    ".",
+    "-p",
+    "*test.py"
+  ]
 }
