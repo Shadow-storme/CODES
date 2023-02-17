@@ -25,6 +25,7 @@ a = "Hello" #index 0,1,2,3,4
 print(a[0])
 print(a[1])
 print(a[2])
+#right to left index -1,-2,-3,-4,-5
 # 3. List
 a = [10, 20, 30, 40, 50]
 b = [60, 70, 80, 90, 100]
