@@ -45,7 +45,7 @@
   "python.testing.unittestArgs": [
     "-v",
     "-s",
-    ".",
+    "./College",
     "-p",
     "*test.py"
   ]
