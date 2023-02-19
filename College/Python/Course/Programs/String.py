@@ -20,3 +20,11 @@ print(y[-2])
 print(len(x))
 print(len(y))
 
+# String IN operator:
+print("ell" in x)
+
+#String Not IN operator:
+print("ell" not in x)
+
+
+
