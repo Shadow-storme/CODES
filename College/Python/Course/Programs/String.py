@@ -26,5 +26,32 @@ print("ell" in x)
 #String Not IN operator:
 print("ell" not in x)
 
+#String Slicing
+a="What up biatch"
+print(a[1:9])
+print(a[2:])
+print(a[-2:])
+print(a[-6:14])
+print(a[-12:-4])
 
+#String Concatination
+b="eyo"
+c="wasup"
+d=b+""+c
+print(d)
+print("Hello"+" "+"World")
+print(b*2)
 
+#String Format
+item='Apple'
+qty=20
+price=30.17
+s1="I want {} kg {} for {} dollars"
+print(s1.format(qty,item,price))
+#or
+s2="I want {1} kg {2} for {2} dollars"
+print(s1.format(qty,item,price))
+
+#escape sequencing
+t1="hey you \"mf\""
+print(t1)
