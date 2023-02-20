@@ -309,8 +309,8 @@ print(f"The Membership Of Two Numbers {num1} ,{num2} Is: {num3}")
 # & Bitwise AND
 print(10&20)
 #or
-a=10
-b=20
+a=53
+b=23
 print(a&b)
 #user input
 num1=int(input("Enter First Number:"))
@@ -321,8 +321,8 @@ print(f"The Bitwise AND Of Two Numbers {num1} ,{num2} Is: {num3}")
 # | Bitwise OR
 print(10|20)
 #or
-a=10
-b=20
+a=53
+b=23
 print(a|b)
 #user input
 num1=int(input("Enter First Number:"))
@@ -330,11 +330,11 @@ num2=int(input("Enter Second Number:"))
 num3=num1|num2;
 print(f"The Bitwise OR Of Two Numbers {num1} ,{num2} Is: {num3}")
 
-# ^ Bitwise XOR
+# ^ Bitwise XOR (Exclusive OR) #if both bits are same then 0 else 1
 print(10^20)
 #or
-a=10
-b=20
+a=56
+b=23
 print(a^b)
 #user input
 num1=int(input("Enter First Number:"))
@@ -365,9 +365,10 @@ print(f"The Bitwise Left Shift Of Two Numbers {num1} Is: {num3}")
 # >> Bitwise Right Shift
 print(10>>2)
 #or
-a=10
-print(a>>2)
+a=10  # 1010
+print(a>>2)  # 0010  2
 #user input
 num1=int(input("Enter First Number:"))
 num3=num1>>2;
 print(f"The Bitwise Right Shift Of Two Numbers {num1} Is: {num3}")
+
