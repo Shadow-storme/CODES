@@ -15,7 +15,7 @@ a = 10 + 5j
 b = 20 + 5j
 c = a + b
 print(c)
-# 2. Strings: Sequence of characters.String is immutable.Strings are arrays.
+# 2. Strings:
 a = "Hello"
 b = "World"
 c = a + b
