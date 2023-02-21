@@ -30,6 +30,12 @@ const createNav = () => {
     <li><a href="#" class="link">Men
             <i class="fas fa-caret-down"></i>
         </a>
+        <ul>
+            <li><a href="#">All</a></li>
+            <li><a href="#">Dresses</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Skirts</a></li>
+        </ul>
     </li>
     <li><a href="#" class="link">Kids</a></li>
     <li><a href="contact.html" class="link">Contact</a></li>
