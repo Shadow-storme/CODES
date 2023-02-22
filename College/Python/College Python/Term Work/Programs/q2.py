@@ -21,6 +21,19 @@ print("the value of a ** b is", 10**20)
 #modulus
 print("the value of a % b is", 10%20)
 
+'''Assignment operator using complex numbers'''
+m=10+20j
+n=20+30j
+#complex addition
+print("\nOutput of complex operator:\n")
+print("the value of m + n is", m+n)
+#complex subtraction
+print("the value of m - n is", m-n)
+#complex multiplication
+print("the value of m * n is", m*n)
+#complex division
+print("the value of m / n is", m/n)
+
 """logical operator"""
 
 print("\nOutput of Logical operator:\n")
@@ -63,6 +76,35 @@ print("the value of a >> b is", 10 >> 20)
 #bitwise left shift
 print("the value of a << b is", 10 << 20)
 
+'''Identity Operators'''
+
+# is Identity
+a=10
+b=20
+print(a is b)
+
+# is not Identity
+a=10
+b=20
+print(a is not b)
+
+'''Membership Operators'''
+
+# in Membership
+print(10 in [10,20,30])
+#or
+a=10
+b=[10,20,30]
+print(a in b)
+
+# not in Membership
+print(10 not in [10,20,30])
+#or
+a=10
+b=[10,20,30] #list
+print(a not in b)
+
+'''
 #concatenation of string
 
 c='Hello';
@@ -101,4 +143,4 @@ l=3+4j;
 
 k=k+l;
 
-print(k)
+print(k)'''
