@@ -34,6 +34,7 @@ print(c)
 a = {10, 20, 30, 40, 50}
 b = {60, 70, 80, 90, 100}
 c = a and b
+print(id(a))
 print(c)
 # 6. Dictionary
 a = {"Name": "Singh", "Age": 19, "Country": "India"}

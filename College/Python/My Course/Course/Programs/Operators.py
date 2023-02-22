@@ -296,7 +296,7 @@ print(f"The Membership Of Two Numbers {num1} ,{num2} Is: {num3}")
 print(10 not in [10,20,30])
 #or
 a=10
-b=[10,20,30]
+b=[10,20,30] #list
 print(a not in b)
 #user input
 num1=int(input("Enter First Number:"))
