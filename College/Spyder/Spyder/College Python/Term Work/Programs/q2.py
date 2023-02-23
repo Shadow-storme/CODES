@@ -1,9 +1,8 @@
-"""Assignment operator, logical operator, relational operator, bitwise operator"""
 #Assigning values to variables
 a = 10
 b = 20
 
-#Assignment operator
+'''Assignment operator'''
 
 print("\nOutput of Assignment operator:\n")
 #addition
@@ -20,6 +19,8 @@ print("the value of a // b is", 10//20)
 print("the value of a ** b is", 10**20)
 #modulus
 print("the value of a % b is", 10%20)
+#float modulus
+print("the value of a % b is", 10.5%20.5)
 
 """logical operator"""
 
@@ -63,42 +64,28 @@ print("the value of a >> b is", 10 >> 20)
 #bitwise left shift
 print("the value of a << b is", 10 << 20)
 
-#concatenation of string
+'''Identity Operators'''
 
-c='Hello';
-d='World';
-c=c+d;
-print(c)
+# is Identity
+print("\nOutput of Identity operator:\n")
+a=10
+b=20
+print(a is b)
 
-#list
-print("\nOutput of List:\n")
-e=[1,2,3];
-f=[4,5,6];
+# is not Identity
+a=10
+b=20
+print(a is not b)
 
-e=e+f;
-print(e)
+'''Membership Operators'''
 
-#tuple
-print("\nOutput of Tuple:\n")
-g=(1,2,3);
-h=(4,5,6);
+# in Membership
+print("\nOutput of Membership operator:\n")
+a=10
+b=[10,20,30] #
+print(a in b)
 
-g=g+h;
-print(g)
-
-#comparison of string
-print("\nOutput of Comparison of string:\n")
-i='Hello';
-j='World';
-
-i=i==j;
-print(i)
-
-#complex number
-print("\nOutput of Complex number:\n")
-k=2+3j;
-l=3+4j;
-
-k=k+l;
-
-print(k)
+# not in Membership
+a=10
+b=[10,20,30] #list
+print(a not in b)
