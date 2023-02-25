@@ -115,109 +115,39 @@
 
 // app.listen(5000, () => { console.log("Server running on port 5000"); });
 
-//create a POST request that accepts the following details: student ID (should be unique), Student name,GPA. Use postman to make these requests and populate the storage.
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
-// var express = require('express');
-// var app = express();
-// const storage = require('node-persist');
-// var bodyParser = require('body-parser');
-// var jsonParser = bodyParser.json();
-// storage.init();
+// parse application/json
+app.use(bodyParser.json())
 
-// app.post('/student', jsonParser, async (req, res) => {
-//   const {student_id,student_name,GPA} = req.body;
-//   if ((await storage.keys()).includes(student_id)) {
-//     res.send("Student ID already exists");
-//   }
-//   else {
-//     await storage.setItem(student_id,student_name,GPA);
-//     res.send("Student added successfully");
-//   }
-// }
-// );
+let studentss = [];
 
-// app.listen(5000, () => { console.log("Server running on port 5000"); });
+// POST request to add a student
+app.post('/studentss', (req, res) => {
+  const { student_id, student_name, gpa } = req.body;
 
-//Postman code
+  // Check if student already exists
+  const existingStudent = studentss.find(student => student.student_id === student_id);
+  if (existingStudent) {
+    return res.status(400).json({ message: "Student with this ID already exists" });
+  }
 
-//POST http://localhost:5000/student
-//Content-Type: application/json
+  // Add new student to the array
+  const newStudent = { student_id, student_name, gpa };
+  studentss.push(newStudent);
+  
+  return res.status(201).json(newStudent);
+});
 
-// {
-//     "student_id": "001",
-//     "student_name": "Singh",
-//     "GPA": "3.5"
-// }
+// GET request to retrieve all studentss
+app.get('/studentss', (req, res) => {
+  let output = "All studentss data:\n\n";
+  studentss.forEach((student) => {
+    output += `Student ID: ${student.student_id}\nName: ${student.student_name}\nGPA: ${student.gpa}\n\n`;
+  });
+  res.status(200).send(output);
+});
 
-
-// //then create an endpoint that retrieves all the data and print them.Make this request from the browser.
-
-var express = require('express');
-var app = express();
-
-const storage = require('node-persist');
-
-var bodyParser = require('body-parser');
-
-var jsonParser = bodyParser.json();
-storage.init();
-
-app.get('/student', async (req, res) => {
-  let data = await storage.values();
-  res.send(data);
-}
-);
-
-app.listen(5000, () => { console.log("Server running on port 5000"); });
-
-
-// //then, create another GET request that retrieves the data of a particular student , and print it.Make this request from the browser.
-
-// var express = require('express');
-// var app = express();
-
-// const storage = require('node-persist');
-
-// var bodyParser = require('body-parser');
-
-// var jsonParser = bodyParser.json();
-
-// storage.init();
-
-// app.get('/student/:id', async (req, res) => {
-//   if ((await storage.keys()).includes(req.params.id)) {
-//     res.send(await storage.getItem(req.params.id));
-//   }
-//   else {
-//     res.send("Student not found");
-//   }
-
-// }
-// );
-
-// app.listen(5000, () => { console.log("Server running on port 5000"); });
-
-//finally create an endpoint that looks for the topper among the class. For this, all the data should be retrieved and sifted through, and in the browser, display the ida with the highest GPA.
-
-// var express = require('express');
-// var app = express();
-
-// const storage = require('node-persist');
-
-// var bodyParser = require('body-parser');
-
-// var jsonParser = bodyParser.json();
-
-// storage.init();
-
-// app.get('/student', async (req, res) => {
-//   let data = await storage.values();
-//   let topper = data.reduce((a, b) => a.GPA > b.GPA ? a : b);
-//   res.send(topper);
-// }
-// );
-
-// app.listen(5000, () => { console.log("Server running on port 5000"); });
-
-//finally create an endpoint that looks for the topper among the class. For this, all the data should be retrieved and sifted through, and in the browser, display the id with the highest GPA.
-//output: { student_name: 'Singh', GPA: 9.5 }
+app.listen(3000, () => console.log('Server running on port 3000'));
