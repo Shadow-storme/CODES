@@ -32,7 +32,7 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 storage.init();
 
-app.get('/student', async (req, res) => {
+app.get('/allStudents', async (req, res) => {
   var allData = await storage.values();
   var allKeys = await storage.keys();
   var allDataString = "<h2>ALL STUDENTS DATA!</h2>";
