@@ -1,11 +1,11 @@
 #List Methods
 
-#1. append() - #append() method adds an element to the end of the list.
+#1. append() -
 a=[1,2,3,4,5]
 a.append(6)
 print(a)
 
-#2. extend() - #extend()
+#2. extend() -
 a=[1,2,3,4,5]
 a.extend([6,7,8])
 print(a)
